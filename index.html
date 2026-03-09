@@ -103,8 +103,9 @@ footer{padding:52px 56px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1
 
 <!-- SPLASH -->
 <div id="splash">
-  <p class="sp-line" id="s1">Więcej niż nocleg</p>
-  <p class="sp-line" id="s2" style="color:var(--gold)">początek Twojego urlopu.</p>
+  <p class="sp-line" id="s1">Więcej niż nocleg.</p>
+  <p class="sp-line" id="s2">Tu zaczyna się</p>
+  <p class="sp-line" id="s3">Twój prawdziwy wypoczynek.</p>
 </div>
 
 <!-- MAIN -->
@@ -239,14 +240,18 @@ const main = document.getElementById('main');
 // 3.3s  — znika
 // 3.8s  — splash znika, strona się pojawia
 
-setTimeout(() => s1.classList.add('show'), 300);
-setTimeout(() => s1.classList.add('hide'), 1600);
-setTimeout(() => { s1.classList.remove('show'); s2.classList.add('show'); }, 2000);
-setTimeout(() => s2.classList.add('hide'), 3300);
+const s3 = document.getElementById('s3');
+
+setTimeout(() => s1.classList.add('show'), 300);       // s1 wjeżdża
+setTimeout(() => s1.classList.add('hide'), 1500);      // s1 znika
+setTimeout(() => s2.classList.add('show'), 2500);      // przerwa 1s, s2 wjeżdża
+setTimeout(() => s2.classList.add('hide'), 3800);      // s2 znika
+setTimeout(() => s3.classList.add('show'), 4800);      // przerwa 1s, s3 wjeżdża
+setTimeout(() => s3.classList.add('hide'), 6200);      // s3 znika
 setTimeout(() => {
   splash.classList.add('out');
   main.classList.add('show');
-}, 3800);
+}, 6900);
 
 // Scroll reveal
 const io = new IntersectionObserver(ee => {
