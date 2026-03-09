@@ -119,7 +119,6 @@ footer{padding:52px 56px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1
 <body>
 
 <div id="splash">
-  <h1 id="t1">Więcej niż nocleg.</h1>
   <h1 id="t2">Tu zaczyna się</h1>
   <h1 id="t3">Twój prawdziwy wypoczynek.</h1>
 </div>
@@ -253,23 +252,19 @@ var page=document.getElementById('page');
 function show(el){ el.classList.add('vis'); el.classList.remove('out'); }
 function hide(el){ el.classList.remove('vis'); el.classList.add('out'); }
 
-// t1: 0 → 700ms
-setTimeout(function(){ show(t1); }, 0);
-setTimeout(function(){ hide(t1); }, 700);
+// t2: 0 → 700ms
+setTimeout(function(){ show(t2); }, 0);
+setTimeout(function(){ hide(t2); }, 700);
 
-// t2: 900 → 1600ms
-setTimeout(function(){ show(t2); }, 900);
-setTimeout(function(){ hide(t2); }, 1600);
+// t3: 900 → 1700ms
+setTimeout(function(){ show(t3); }, 900);
+setTimeout(function(){ hide(t3); }, 1700);
 
-// t3: 1800 → 2500ms
-setTimeout(function(){ show(t3); }, 1800);
-setTimeout(function(){ hide(t3); }, 2500);
-
-// otwórz stronę po 2900ms
+// otwórz stronę po 2000ms
 setTimeout(function(){
   splash.classList.add('gone');
   page.classList.add('show');
-}, 2900);
+}, 2000);
 
 // scroll reveal
 var io=new IntersectionObserver(function(ee){ee.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1});
