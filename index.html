@@ -217,7 +217,7 @@ footer{padding:52px 56px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1
     <h4>Kontakt</h4>
     <ul>
       <li><a href="tel:500456274">500 456 274</a></li>
-      <li><a href="mailto:kontakt@perlapienin.pl">kontakt@perlapienin.pl</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#a0cbcfced4c1cbd4e0d0c5d2ccc1d0c9c5cec9ce8ed0cc"><span class="__cf_email__" data-cfemail="0e6561607a6f657a4e7e6b7c626f7e676b606760207e62">[email&#160;protected]</span></a></li>
       <li><a href="#">ul. Podzagonie 12, 34-450 Grywałd</a></li>
     </ul>
   </div>
@@ -228,7 +228,7 @@ footer{padding:52px 56px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1
 </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const s1 = document.getElementById('s1');
 const s2 = document.getElementById('s2');
 const splash = document.getElementById('splash');
@@ -241,17 +241,14 @@ const main = document.getElementById('main');
 // 3.8s  — splash znika, strona się pojawia
 
 const s3 = document.getElementById('s3');
-
-setTimeout(() => s1.classList.add('show'), 300);       // s1 wjeżdża
-setTimeout(() => s1.classList.add('hide'), 1500);      // s1 znika
-setTimeout(() => s2.classList.add('show'), 2500);      // przerwa 1s, s2 wjeżdża
-setTimeout(() => s2.classList.add('hide'), 3800);      // s2 znika
-setTimeout(() => s3.classList.add('show'), 4800);      // przerwa 1s, s3 wjeżdża
-setTimeout(() => s3.classList.add('hide'), 6200);      // s3 znika
-setTimeout(() => {
-  splash.classList.add('out');
-  main.classList.add('show');
-}, 6900);
+// całość: ~2.5s
+setTimeout(() => s1.classList.add('show'), 0);
+setTimeout(() => s1.classList.add('hide'), 600);
+setTimeout(() => s2.classList.add('show'), 800);
+setTimeout(() => s2.classList.add('hide'), 1400);
+setTimeout(() => s3.classList.add('show'), 1600);
+setTimeout(() => s3.classList.add('hide'), 2200);
+setTimeout(() => { splash.classList.add('out'); main.classList.add('show'); }, 2500);
 
 // Scroll reveal
 const io = new IntersectionObserver(ee => {
@@ -269,9 +266,4 @@ let c=0;
 const qt=document.getElementById('qt'),qa=document.getElementById('qa');
 const dots=document.querySelectorAll('.qdots span');
 qt.style.transition=qa.style.transition='opacity .3s';
-function setT(i){c=i;qt.style.opacity=qa.style.opacity='0';setTimeout(()=>{qt.textContent=TS[i].t;qa.textContent=TS[i].a;qt.style.opacity=qa.style.opacity='1'},280);dots.forEach((d,j)=>d.classList.toggle('on',j===i));}
-dots.forEach(d=>d.addEventListener('click',()=>setT(+d.dataset.i)));
-setInterval(()=>setT((c+1)%TS.length),5000);
-</script>
-</body>
-</html>
+function setT(i){c=i;qt.style.opacity=qa.style.opacity='0';setTimeout(()=>{qt.textContent=TS[i].t;qa.textCont
