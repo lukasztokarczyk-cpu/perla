@@ -252,19 +252,19 @@ var page=document.getElementById('page');
 function show(el){ el.classList.add('vis'); el.classList.remove('out'); }
 function hide(el){ el.classList.remove('vis'); el.classList.add('out'); }
 
-// t2: 0 → 700ms
+// t2: 0 → 1100ms
 setTimeout(function(){ show(t2); }, 0);
-setTimeout(function(){ hide(t2); }, 700);
+setTimeout(function(){ hide(t2); }, 1100);
 
-// t3: 900 → 1700ms
-setTimeout(function(){ show(t3); }, 900);
-setTimeout(function(){ hide(t3); }, 1700);
+// t3: 1400 → 2600ms
+setTimeout(function(){ show(t3); }, 1400);
+setTimeout(function(){ hide(t3); }, 2600);
 
-// otwórz stronę po 2000ms
+// otwórz stronę po 3000ms
 setTimeout(function(){
   splash.classList.add('gone');
   page.classList.add('show');
-}, 2000);
+}, 3000);
 
 // scroll reveal
 var io=new IntersectionObserver(function(ee){ee.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1});
